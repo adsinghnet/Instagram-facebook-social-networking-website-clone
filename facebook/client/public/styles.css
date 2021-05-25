@@ -115,11 +115,13 @@
 }
 .to-like-icon, .share-icon, .setting-icon{
     width: 30px;
+    cursor: pointer;
 }
 
 .setting-icon{padding: 0 5px;}
 .to-like-icon img, .share-icon img{
     width: inherit;
+    cursor: pointer;
 }
 .chat-info{
     border-bottom: 1px solid #cecdcd;

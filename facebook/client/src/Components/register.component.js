@@ -19,7 +19,7 @@ const Register = () => {
                     if (i.token === token) window.location = "/";
                 })
             })
-    })
+    },[])
 
     useEffect(() => {
         if (password !== confirmation) {

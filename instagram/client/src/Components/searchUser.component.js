@@ -9,6 +9,7 @@ const SearchUser = () => {
         Axios.get(`${BACKEND_URL}/users`)
             .then(res => {
                 (res.data).forEach((user) => {
+                    
                     setUserList(users => [...users, user.username])
                 })
             })
@@ -22,6 +23,7 @@ const SearchUser = () => {
         li = ul.getElementsByTagName('li');
 
         for (let i = 0; i < li.length; i++) {
+            
             let user = li[i];
             div = user.getElementsByTagName('div')[0];
             txtValue = div.textContent || div.innerText;

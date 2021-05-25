@@ -10,6 +10,7 @@ const logged_in = async () => {
     await Axios.get(`${BACKEND_URL}/users`)
         .then(res => {
             (res.data).forEach((i) => {
+                
                 if (i.token === token) is_logged_in = i
             })
         })
@@ -35,6 +36,7 @@ const CreatePost = () => {
         var list = e.split(',');
         var valid = true;
         for (let i = 0; i < list.length; i++) {
+            
             if (String(list[i]).length === 0 || list[i] === ' ') {
                 valid = false;
             }
@@ -60,10 +62,12 @@ const CreatePost = () => {
         e.preventDefault();
         const tagList = tags.split(',');
         for (let i = 0; i < tagList.length; i++) {
+            
             if (String(tagList[i])[0] === " ") { tagList[i] = String(tagList[i]).substring(1) }
         }
         const hastagList = hashtags.split(',');
         for (let i = 0; i < hastagList.length; i++) {
+            
             if (String(hastagList[i])[0] === " ") { hastagList[i] = String(hastagList[i]).substring(1) }
         }
         const Post = new FormData();

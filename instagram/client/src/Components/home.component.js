@@ -14,6 +14,7 @@ async function check_token() {
     await Axios.get(`${BACKEND_URL}/users`)
         .then(res => {
             (res.data).forEach(i => {
+                
                 if (i.token === token) {
                     logged_in = i
                 }
@@ -45,12 +46,15 @@ const Home = () => {
             .then(res => {
                 if (res.data.following) {
                     (res.data.following).forEach((following) => {
+                        
                         Axios.get(`${BACKEND_URL}/posts/get/${following.following}?skip=${skip}`)
                             .then(res => {
                                 (res.data).forEach(post => {
+                                    
                                     Axios.get(`${BACKEND_URL}/users`)
                                         .then(users => {
                                             (users.data).forEach((user) => {
+                                                
                                                 if (user._id === post.user) {
                                                     post.creator = user.username;
                                                     setPosts(posts => [...posts, post])
@@ -75,10 +79,12 @@ const Home = () => {
 
     useEffect(() => {
         posts.forEach((post) => {
+            
             Axios.get(`${BACKEND_URL}/likes/get/${post._id}/all`)
                 .then(res => {
                     setTotalLikes(n => ({ ...n, [post._id]: res.data.length }));
                     (res.data).forEach((like) => {
+                        
                         if (like.liker === userInfo._id) {
                             setLikeInfo(likes => ({
                                 ...likes,
@@ -128,6 +134,7 @@ const Home = () => {
         Axios.get(`${BACKEND_URL}/users/get_newest`)
             .then(res => {
                 (res.data).forEach((user) => {
+                    
                     setNewestUser(existing => [...existing, user])
                 })
             })
@@ -139,9 +146,11 @@ const Home = () => {
             Axios.get(`${BACKEND_URL}/posts/get/tagged/${userInfo.username}`)
                 .then(res => {
                     (res.data).forEach((tag) => {
+                        
                         Axios.get(`${BACKEND_URL}/users`)
                             .then(users => {
                                 (users.data).forEach((user) => {
+                                    
                                     if (user._id === tag.user) {
                                         tag.username = user.username;
                                         setTaggedList(ex => [...ex, tag]);
@@ -158,9 +167,11 @@ const Home = () => {
             Axios.get(`${BACKEND_URL}/chats/info/${userInfo._id}`)
                 .then(res => {
                     res.data.forEach((chat) => {
+                        
                         Axios.get(`${BACKEND_URL}/users`)
                             .then(users => {
                                 users.data.forEach((user) => {
+                                    
                                     if (user._id === chat.from) { chat.username = user.username; setChatList(chats => [...chats, chat]); }
                                 })
                             })

@@ -46,6 +46,7 @@ router.get('/get/tagged/:user', (req, res) => {
     .sort({_id: -1})
     .then(posts => {
         posts.forEach((post) => {
+            
             if(post.tags.includes(user)){
                 tagged_list.push(post)
             }

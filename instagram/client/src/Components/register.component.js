@@ -16,10 +16,11 @@ const Register = () => {
         axios.get(`${BACKEND_URL}/users`)
             .then(res => {
                 (res.data).forEach(i => {
+                    
                     if (i.token === token) window.location = "/";
                 })
             })
-    })
+    },[])
 
     useEffect(() => {
         if (password !== confirmation) {
@@ -45,7 +46,7 @@ const Register = () => {
             }
             axios.post(`${BACKEND_URL}/users/register`, User)
                 .then(res => {
-                    console.log(res);
+                    
                     cookie.save('token', res.data.token, { path: '/' })
                     window.location = "/";
                 })

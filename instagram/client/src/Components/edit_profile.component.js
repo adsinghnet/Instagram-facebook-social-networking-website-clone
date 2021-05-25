@@ -11,6 +11,7 @@ const logged_in = async () => {
     await Axios.get(`${BACKEND_URL}/users`)
         .then(res => {
             (res.data).forEach((i) => {
+                
                 if (i.token === token) is_logged_in = i
             })
         })

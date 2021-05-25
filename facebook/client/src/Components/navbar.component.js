@@ -40,10 +40,10 @@ const Navbar = () => {
                     }
                 })
             })
-    })
+    },[])
     useEffect(() => {
         logged_in().then(result => setLoggedIn(result))
-    })
+    },[])
     const Logout = () => {
         cookie.save('token', '', { path: '/' });
         window.location = "/login";

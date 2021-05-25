@@ -9,6 +9,7 @@ const CheckisOwner = async () => {
     await Axios.get(`${BACKEND_URL}/users`)
         .then(users => {
             (users.data).forEach((user) => {
+                
                 if (user.token === token) owner = true
             })
         })
@@ -37,6 +38,7 @@ const EditPost = (params) => {
         var list = e.split(',');
         var valid = true;
         for (let i = 0; i < list.length; i++) {
+            
             if (String(list[i]).length === 0 || list[i] === ' ') {
                 valid = false;
             }
@@ -63,10 +65,12 @@ const EditPost = (params) => {
 
         const tagList = tags.split(',');
         for (let i = 0; i < tagList.length; i++) {
+            
             if (String(tagList[i])[0] === " ") { tagList[i] = String(tagList[i]).substring(1) }
         }
         const hastagList = Hashtags.split(',');
         for (let i = 0; i < hastagList.length; i++) {
+            
             if (String(hastagList[i])[0] === " ") { hastagList[i] = String(hastagList[i]).substring(1) }
         }
 

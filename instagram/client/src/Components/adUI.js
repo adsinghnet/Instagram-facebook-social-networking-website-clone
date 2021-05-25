@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", ()=>{
 	var icon = document.querySelectorAll("#nav-icon");
 	icon.forEach((icon)=>{
+
 		var target = icon.dataset.target;
 		var navlist = document.getElementById(target);
 		navlist.classList.add("nav-list-responsive");

@@ -19,6 +19,8 @@ const logged_in = async () => {
     await axios.get(`${BACKEND_URL}/users`)
         .then(res => {
             (res.data).forEach((i) => {
+
+                
                 if (i.token === token) is_logged_in = i
             })
         })
@@ -34,16 +36,17 @@ const Navbar = () => {
         axios.get(`${BACKEND_URL}/users`)
             .then(res => {
                 (res.data).forEach(i => {
+                    
                     if (i.token === token) {
                         setUsername(i.username);
                         if (i.profile_picture) setPP(BACKEND_URL + '/' + i.profile_picture.filename)
                     }
                 })
             })
-    })
+    },[])
     useEffect(() => {
         logged_in().then(result => setLoggedIn(result))
-    })
+    },[])
     const Logout = () => {
         cookie.save('token', '', { path: '/' });
         window.location = "/login";

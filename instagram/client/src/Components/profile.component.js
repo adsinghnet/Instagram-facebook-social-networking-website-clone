@@ -11,6 +11,7 @@ const user_available = async (username) => {
     await Axios.get(`${BACKEND_URL}/users`)
         .then(res => {
             (res.data).forEach((i) => {
+                
                 if (i.username.toLowerCase() === username) available = true
             })
         })
@@ -23,6 +24,7 @@ const logged_in = async () => {
     await Axios.get(`${BACKEND_URL}/users`)
         .then(res => {
             (res.data).forEach((i) => {
+                
                 if (i.token === token) is_logged_in = i
             })
         })
@@ -32,6 +34,7 @@ const logged_in = async () => {
 const check_followed = (follower, id) => {
     let if_followed = false;
     follower.forEach((i) => {
+        
         if (i.follower === id) {
             if_followed = true;
         }
@@ -65,6 +68,7 @@ const Profile = (props) => {
             Axios.get(`${BACKEND_URL}/users`)
                 .then(res => {
                     (res.data).forEach((i) => {
+                        
                         if (i.username.toLowerCase() === username) {
                             const token = cookie.load('token');
                             if (i.profile_picture) setProfilePicture(BACKEND_URL + '/' + i.profile_picture.filename);
@@ -124,7 +128,7 @@ const Profile = (props) => {
                             </div>
                             <div className="profile-info">
                                 <h2 className="profile-heading box-title">{username} {isOwner ?
-                                    <NavLink to="/setting/profile/"><button className="btn btn-primary">Edit Profile</button></NavLink>
+                                    <NavLink to="/setting/profile/"><button className="btn btn btn-outline-primary">Edit Profile</button></NavLink>
                                     : null}</h2>
                             </div>
                             <div className="margin">
@@ -137,8 +141,8 @@ const Profile = (props) => {
                                             ? null
                                             : [
                                                 (followed
-                                                    ? <button className="form-control btn btn-primary" onClick={Unfollow} key={isLoggedIn._id}>Unfollow</button>
-                                                    : <button className="form-control btn btn-primary" onClick={Follow} key={isLoggedIn._id}>Follow</button>
+                                                    ? <button className="form-control btn btn btn-outline-primary" onClick={Unfollow} key={isLoggedIn._id}>Unfollow</button>
+                                                    : <button className="form-control btn btn btn-outline-primary" onClick={Follow} key={isLoggedIn._id}>Follow</button>
                                                 )
                                             ]
                                         )

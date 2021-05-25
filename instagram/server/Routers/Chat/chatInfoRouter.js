@@ -15,6 +15,7 @@ router.get('/info/:user', (req, res) => {
             messages.forEach((chat) => Chats.push(chat));
             Chats = Chats.sort((a, b) => (a._id > a._id) ? 1: ((b._id > a._id)?-1: 0));
             Chats.forEach((chat) => {
+                
                 if(!chatInfo.includes({from:chat.from}) && String(chat.from) !== String(user)) chatInfo.push({from:chat.from, id: chat._id, at: chat.createdAt});
             })
             res.json(chatInfo);

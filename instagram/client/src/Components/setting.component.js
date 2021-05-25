@@ -11,6 +11,7 @@ const check_logged_in = async () => {
     await Axios.get(`${BACKEND_URL}/users`)
         .then(res => {
             (res.data).forEach((i) => {
+                
                 if (i.token === token) is_logged_in = i
             })
         })
@@ -29,7 +30,7 @@ const Setting = () => {
             if (!result) window.location = "/login";
             else setUserInfo(result)
         })
-    })
+    },[])
 
     useEffect(() => {
         if (inputNewPassword !== inputConfirmNewPassword) {
@@ -68,7 +69,7 @@ const Setting = () => {
                             <input className="form-control" type="password" value={inputConfirmNewPassword} onChange={({ target: { value } }) => setInputConfirmNewPassword(value)} required />
                         </div>
                         <div className="form-group">
-                            <input type="submit" className="form-control btn btn-primary" />
+                            <input type="submit" className="form-control btn btn btn-outline-primary" />
                         </div>
                     </form>
                     <div className="margin box box-shadow text-dark">

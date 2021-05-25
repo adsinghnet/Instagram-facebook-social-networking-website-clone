@@ -15,6 +15,7 @@ const check_logged_in = async () => {
     await Axios.get(`${BACKEND_URL}/users`)
         .then(res => {
             (res.data).forEach((i) => {
+                
                 if (i.token === token) is_logged_in = i
             })
         })
@@ -52,6 +53,7 @@ const Post = (params) => {
             .then(res => {
                 const token = cookie.load('token');
                 (res.data).forEach((i) => {
+                    
                     if (i.token === token) if (postInfo) if (i._id === postInfo.user) setIsOwner(true);
                     if (postInfo) if (i._id === postInfo.user) setUsername(i.username.toLowerCase());
                 })
@@ -63,6 +65,7 @@ const Post = (params) => {
             Axios.get(`${BACKEND_URL}/likes/get/${postInfo._id}/all`)
                 .then(res => {
                     (res.data).forEach((like) => {
+                        
                         if (like.liker === userInfo._id) setIsLiked(like._id);
                     })
                     setTotalLike(res.data.length)
@@ -127,9 +130,11 @@ const Post = (params) => {
 
     useEffect(() => {
         comments.forEach((comment) => {
+            
             Axios.get(`${BACKEND_URL}/users`)
                 .then(users => {
                     (users.data).forEach((user) => {
+                        
                         if (user._id === comment.commenter) {
                             setCommenterName(ex => ({
                                 ...ex,

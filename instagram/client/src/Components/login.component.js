@@ -14,10 +14,11 @@ const Login = () => {
         axios.get(`${BACKEND_URL}/users`)
             .then(res => {
                 (res.data).forEach(i => {
+                    
                     if (i.token === token) window.location = "/";
                 })
             })
-    })
+    },[])
 
     const Submit = (e) => {
         e.preventDefault();

@@ -17,7 +17,7 @@ const Login = () => {
                     if (i.token === token) window.location = "/";
                 })
             })
-    })
+    },[])
 
     const Submit = (e) => {
         e.preventDefault();

@@ -11,6 +11,7 @@ async function check_token() {
     await axios.get(`${BACKEND_URL}/users`)
         .then(res => {
             (res.data).forEach(i => {
+                
                 if (i.token === token) {
                     logged_in = true
                     return true
@@ -31,6 +32,7 @@ const PP = () => {
                 axios.get(`${BACKEND_URL}/users`)
                     .then(res => {
                         (res.data).forEach(i => {
+                            
                             if (i.token === token) {
                                 if (i.profile_picture) setFile(BACKEND_URL + "/" + i.profile_picture.filename)
                             }

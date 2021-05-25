@@ -29,7 +29,7 @@ const Setting = () => {
             if (!result) window.location = "/login";
             else setUserInfo(result)
         })
-    })
+    },[])
 
     useEffect(() => {
         if (inputNewPassword !== inputConfirmNewPassword) {
