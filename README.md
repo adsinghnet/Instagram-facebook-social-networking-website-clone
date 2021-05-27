@@ -3,7 +3,7 @@ The architecture of both the applications are same.
 Choose one of them as required
 
 
-## How to run
+## How to run:
 - Add your MongoDB Local/Atlas URI in .env file in server folder.
 ***For Example:***
 ![Database Example](database.png)
@@ -29,7 +29,7 @@ npm start
 
 
 
-## Features
+## Features:
 
 - Each Post have Name , Username ,Profile picture, Date , and Picture to be 
 uploaded along with some text.
@@ -47,17 +47,16 @@ posts, followers and following.
 - Real Time Chatting functionality using sockets.
 - Follow/unfollow functionality for each user.
 
-## Instagram clone Demo
+## Instagram clone Demo:
 ![Demo](instaclone.gif)
 
-## Facebook clone Demo
+## Facebook clone Demo:
 ![Demo](fbclone.gif)
 
-**Free application, Hell Yeah!**
 
-
-## Don't spam or upload inappropriate images on the database otherwise, your IP will be banned permanently.
-Username and password are same:
+## Live web application (instagram):
+***[https://instagram-frontend-ad.vercel.app/](https://instagram-frontend-ad.vercel.app/)***
+## Demo Username (password is same as username):
 - sumankalla
 - sumitlata
 - kirancherian
@@ -69,5 +68,6 @@ Username and password are same:
 - nilimasahni
 - harishchopra
 
-## Website 
+## Personal Website:
 ***[http://projects.adsingh.net/](http://projects.adsingh.net/)***
+***[https://vfxguy.net/](https://vfxguy.net/)***
