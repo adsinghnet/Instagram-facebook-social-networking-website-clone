@@ -15,14 +15,16 @@ ATLAS_URI = mongodb+srv://ad1234:ad1234@cluster1.bqwhs.mongodb.net/instagram?ret
 
 ```
 # Install dependencies and run backend
-cd server
+cd Backend
 npm install
 npm start
 ```
 
 ```
 # Install dependencies and run frontend
-cd client
+cd Frontend
+    //choose one from instagram or facebook
+    example: cd Instagram
 npm install
 npm start
 ```
