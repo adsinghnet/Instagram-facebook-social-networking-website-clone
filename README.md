@@ -57,7 +57,10 @@ posts, followers and following.
 
 
 ## Live web application (instagram):
-***[https://instagram-frontend-ad.vercel.app/](https://instagram-frontend-ad.vercel.app/)***
+### Instagram clone:
+***[https://instagram-adsinghnet.vercel.app/](https://instagram-adsinghnet.vercel.app/)***
+### Facebook clone:
+***[https://facebook-frontend-ad.vercel.app/](https://facebook-frontend-ad.vercel.app/)***
 ## Demo Username (password is same as username):
 - sumankalla
 - sumitlata
@@ -73,3 +76,4 @@ posts, followers and following.
 ## Personal Website:
 ***[http://projects.adsingh.net/](http://projects.adsingh.net/)***
 ***[https://vfxguy.net/](https://vfxguy.net/)***
+***[https://www.linkedin.com/in/adsinghnet/](https://www.linkedin.com/in/adsinghnet/)***
